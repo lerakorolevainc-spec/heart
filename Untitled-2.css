@@ -1,11 +1,42 @@
-body{
-    background-color: black;
-    text-align: center;
-    font-family: 'Caveat', cursive;
+body {
+  margin: 0;
+  background: #0b0b0e;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
-h1, h5, a{
-    color: #1e0097;
+
+.card {
+  padding: 40px;
 }
-div{
-    width: 100%;
+
+h1 {
+  font-size: 60px;
+  color: #c7a0ff;
+  margin-bottom: 15px;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: normal;
+  color: #c5bdce;
+}
+
+a {
+  display: inline-block;
+  font-size: 30px;
+  color: #d2aaff;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: 1px solid #7546a8;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+a:hover {
+  background: #30164b;
 }
