@@ -6,3 +6,6 @@ body{
 h1, h5, a{
     color: #1e0097;
 }
+div{
+    width: 100%;
+}
