@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Сердечко</title>
+<style>
+  body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  canvas {
+    display: block;
+    width: min(100vw, 100vh);
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="heart" width="600" height="600"></canvas>
+
+<script>
+const canvas = document.getElementById('heart');
+const ctx = canvas.getContext('2d');
+
+ctx.fillStyle = 'black';
+ctx.fillRect(0, 0, 600, 600);
+
+ctx.strokeStyle = '#3103a6';
+ctx.lineWidth = 1;
+
+function h(t) {
+  return 15 * Math.sin(t) ** 3;
+}
+
+function e(t) {
+  return 12 * Math.cos(t)
+    - 5 * Math.cos(2 * t)
+    - 2 * Math.cos(3 * t)
+    - Math.cos(4 * t);
+}
+
+let i = 0;
+const total = 2000;
+
+function draw() {
+  for (let j = 0; j < 5 && i < total; j++, i++) {
+    const t = i / total * Math.PI * 2;
+    const x = 300 + h(t) * 17;
+    const y = 300 - e(t) * 17;
+
+    ctx.beginPath();
+    ctx.moveTo(300, 300);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  }
+
+  if (i < total) {
+    requestAnimationFrame(draw);
+  }
+}
+
+draw();
+</script>
+
+</body>
+</html>

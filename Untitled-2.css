@@ -1,0 +1,8 @@
+body{
+    background-color: black;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+}
+h1, h5, a{
+    color: #1e0097;
+}
